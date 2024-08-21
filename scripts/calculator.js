@@ -1,22 +1,30 @@
 class Calculator {
 
-    add(num1, num2) {
-        if (arguments.length > 2) {
+    #checkValidArguments(...numbers) {
+        let args = [...numbers];
+
+        if (args.length > 2) {
             throw new Error("Only 2 parameters allowed.");
-        } else if (arguments.length < 2) {
+        } else if (args.length < 2) {
             throw new Error("2 parameters must be provided.");
         }
         
         if (
-            typeof num1 !== "number" ||
-            typeof num2 !== "number" ||
-            Number.isNaN(num1) ||
-            Number.isNaN(num2))
+            typeof args[0] !== "number" ||
+            typeof args[1] !== "number" ||
+            Number.isNaN(args[0]) ||
+            Number.isNaN(args[1]))
         {
             throw new Error("Parameters must either be an integer or floating point number.");
         }
 
-        return num1 + num2;
+        return true;
+    }
+
+    add(num1, num2) {
+        if (this.#checkValidArguments(...arguments)) {
+            return num1 + num2;
+        }
     }
 
     subtract(num1, num2) {
