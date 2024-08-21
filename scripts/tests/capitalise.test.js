@@ -1,4 +1,4 @@
-import { capitalise } from "./capitalise.js";
+import { capitalise } from "../capitalise.js";
 
 test("capitalises first character of a string with a single word", () => {
     expect(capitalise("hello")).toMatch("Hello");

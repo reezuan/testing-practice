@@ -1,4 +1,4 @@
-import { reverseString } from "./reverseString.js";
+import { reverseString } from "../reverseString.js";
 
 test("reverses a string with a single word", () => {
     expect(reverseString("Cats")).toBe("staC");
