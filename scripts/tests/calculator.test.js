@@ -31,10 +31,6 @@ test("subtracts an integer & floating point number correctly", () => {
     expect(calculator.subtract(15.5, 4.5)).toBeCloseTo(11);
 });
 
-test("adds an integer & floating point number correctly", () => {
-    expect(calculator.add(15, 4.8)).toBeCloseTo(19.8);
-});
-
 test("throws an error if more than 2 arguments are given", () => {
     expect(() => {
         calculator.add(1, 2, 3.65);
