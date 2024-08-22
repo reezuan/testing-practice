@@ -13,8 +13,8 @@ class Calculator {
             typeof args[0] !== "number" ||
             typeof args[1] !== "number" ||
             Number.isNaN(args[0]) ||
-            Number.isNaN(args[1]))
-        {
+            Number.isNaN(args[1])
+        ) {
             throw new Error("Parameters must either be an integer or floating point number.");
         }
 
@@ -28,15 +28,21 @@ class Calculator {
     }
 
     subtract(num1, num2) {
-
+        if (this.#checkValidArguments(...arguments)) {
+            return num1 - num2;
+        }
     }
 
     divide(num1, num2) {
-
+        if (this.#checkValidArguments(...arguments)) {
+            return num1 / num2;
+        }
     }
 
     multiply(num1, num2) {
-        
+        if (this.#checkValidArguments(...arguments)) {
+            return num1 * num2;
+        }
     }
 }
 
